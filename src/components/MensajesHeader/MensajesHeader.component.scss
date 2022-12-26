@@ -1,0 +1,25 @@
+@import "src/colors.scss";
+
+.Boton {
+    margin-left: 4px;
+    margin-right: 4px;
+
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 2px;
+
+    color: $light;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.Vaciar {
+    @extend .Boton;
+    background-color: $danger;
+}
+
+.Vaciar:hover {
+    background-color: $dangerDark;
+}
