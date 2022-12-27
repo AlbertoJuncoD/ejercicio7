@@ -24,8 +24,7 @@ export default function MensajesHeader(props) {
 
     let submit = (values) => {
         console.log(values)
-        props.manejarCambios(values);
-        props.clickNuevo();
+        props.clickNuevo(values);
     }
 
     return (
@@ -33,15 +32,18 @@ export default function MensajesHeader(props) {
             <Formik initialValues={initialValues} validationSchema={validaciones} onSubmit={submit}>
                 {({ touched, errors }) => (
                     <Form className="Formulario">
-                        <Field placeholder='Asunto:' type="text" name='asunto' />
-                        {errors.asunto && touched.asunto ? (<div>{errors.asunto}</div>) : null}
-
-                        <Field placeholder='Email:' type="email" name='email' />
-                        {errors.email && touched.email ? (<div>{errors.email}</div>) : null}
-
-                        <Field placeholder='Mensaje:' type="text" name='mensaje' />
-                        {errors.mensaje && touched.mensaje ? (<div>{errors.mensaje}</div>) : null}
-
+                        <div>
+                            <Field placeholder='Asunto:' type="text" name='asunto' />
+                            {errors.asunto && touched.asunto ? (<div>{errors.asunto}</div>) : null}
+                        </div>
+                        <div>
+                            <Field placeholder='Email:' type="email" name='email' />
+                            {errors.email && touched.email ? (<div>{errors.email}</div>) : null}
+                        </div>
+                        <div>
+                            <Field placeholder='Mensaje:' type="text" name='mensaje' />
+                            {errors.mensaje && touched.mensaje ? (<div>{errors.mensaje}</div>) : null}
+                        </div>
                         <button type="submit" className="Nuevo">Nuevo</button>
                         <button type="button" onClick={props.clickEliminar} className="Vaciar">Vaciar</button>
                     </Form>

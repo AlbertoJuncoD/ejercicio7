@@ -1,5 +1,12 @@
 @import "src/colors.scss";
 
+.Formulario{
+display: inline-flex;
+    div{
+        padding:0 1em;
+    }
+}
+
 .Boton {
     margin-left: 4px;
     margin-right: 4px;
